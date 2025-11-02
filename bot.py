@@ -29,6 +29,10 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 # Scheduler untuk pengingat
 scheduler = AsyncIOScheduler()
 
+@bot.command()
+async def about(ctx):
+    await ctx.send('Ini adalah bot untuk pengingat jadwal!')
+
 # Perintah /add: Menambah kegiatan (format: /add YYYY-MM-DD HH:MM Deskripsi)
 @bot.command()
 async def add(ctx, date_str: str, time_str: str, *, desc: str):
